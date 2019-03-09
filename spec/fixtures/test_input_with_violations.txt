@@ -4,4 +4,4 @@ Analyzing my_flutter_project...
    info • Prefer const with constant constructors • lib/main.dart:13:13 • prefer_const_constructors
    info • Name types using UpperCamelCase • lib/main.dart:19:7 • camel_case_types
    info • Name types using UpperCamelCase • lib/main.dart:27:7 • camel_case_types
-   info • Prefer const with constant constructors • lib/main.dart:48:16 • prefer_const_constructors
+   info • Prefer const with constant constructors • lib/pages/home_page.dart:49:10 • prefer_const_constructors

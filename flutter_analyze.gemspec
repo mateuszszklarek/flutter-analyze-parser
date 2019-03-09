@@ -1,10 +1,10 @@
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "flutter_analyze_parser/version"
+require "flutter_analyze/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = 'flutter_analyze_parser'
-  spec.version       = FlutterAnalyzeParser::VERSION
+  spec.name          = 'flutter_analyze'
+  spec.version       = FlutterAnalyze::VERSION
   spec.authors       = ['Mateusz Szklarek']
   spec.email         = ['mateusz.szklarek@gmail.com']
 

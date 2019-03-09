@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    flutter_analyze_parser (0.1.0)
+    flutter_analyze (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -64,7 +64,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 2.0)
-  flutter_analyze_parser!
+  flutter_analyze!
   guard-rspec (~> 4.7)
   rake (~> 10.0)
   rb-readline (~> 0.5)
