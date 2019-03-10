@@ -34,15 +34,22 @@ When **there are some violations**:
 	   
 Gem takes an output and return array with violations (when there are no violations array will be empty).
 
-**For above output it will be array with 5 elements**
-
-```ruby
-FlutterAnalyzeParser.violations(input)
-```
-
-==>
+Example usage in script
 
 ```
+require 'flutter_analyze_parser'
+
+input = """
+Analyzing my_flutter_project...
+
+   info • Name types using UpperCamelCase • lib/main.dart:5:7 • camel_case_types
+   info • Prefer const with constant constructors • lib/main.dart:13:13 • prefer_const_constructors
+   info • Name types using UpperCamelCase • lib/main.dart:19:7 • camel_case_types
+   info • Name types using UpperCamelCase • lib/main.dart:27:7 • camel_case_types
+   info • Prefer const with constant constructors • lib/pages/home_page.dart:49:10 • prefer_const_constructors
+"""
+puts FlutterAnalyzeParser.violations(input)
+
 #<struct FlutterViolation rule="camel_case_types", description="Name types using UpperCamelCase", file="lib/main.dart", line=5>
 #<struct FlutterViolation rule="prefer_const_constructors", description="Prefer const with constant constructors", file="lib/main.dart", line=13>
 #<struct FlutterViolation rule="camel_case_types", description="Name types using UpperCamelCase", file="lib/main.dart", line=19>
