@@ -1,10 +1,6 @@
-RSpec.describe FlutterAnalyze::Parser do
+RSpec.describe FlutterAnalyzeParser do
   let(:input_without_violations_path) { File.dirname(__FILE__) + "/fixtures/test_input_without_violations.txt" }
   let(:input_with_violations_path) { File.dirname(__FILE__) + "/fixtures/test_input_with_violations.txt" }
-
-  it "has a version number" do
-    expect(FlutterAnalyze::VERSION).not_to be nil
-  end
 
   describe "when read input file without violations" do
     let(:input) { content(input_without_violations_path) }
@@ -15,7 +11,7 @@ RSpec.describe FlutterAnalyze::Parser do
 
     describe "violations" do
       it "should be empty" do
-        expect(FlutterAnalyze::Parser.violations(input)).to be_empty
+        expect(FlutterAnalyzeParser.violations(input)).to be_empty
       end
     end
   end
@@ -28,7 +24,7 @@ RSpec.describe FlutterAnalyze::Parser do
     end
 
     describe "violations" do
-      let(:violations) { FlutterAnalyze::Parser.violations(input) }
+      let(:violations) { FlutterAnalyzeParser.violations(input) }
 
       it "should not be empty" do
         expect(violations).not_to be_empty

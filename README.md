@@ -9,11 +9,11 @@ Parser for `flutter analyze` output.
 
 Add this line to your application's Gemfile:
 
-	$ gem 'flutter_analyze'
+	$ gem 'flutter_analyze_parser'
 
 Or install it yourself as:
 
-    $ gem install flutter_analyze
+    $ gem install flutter_analyze_parser
 
 ## Usage
 
@@ -37,7 +37,7 @@ Gem takes an output and return array with violations (when there are no violatio
 **For above output it will be array with 5 elements**
 
 ```ruby
-FlutterAnalyze::Parser.violations(input)
+FlutterAnalyzeParser.violations(input)
 ```
 
 ==>
