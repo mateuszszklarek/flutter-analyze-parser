@@ -10,4 +10,4 @@ rvm:
 before_install: gem install bundler -v 2.0.1
 install: gem install test-unit codecov
 
-script: bundle exec rake spec
+script: bundle install && bundle exec rake spec
