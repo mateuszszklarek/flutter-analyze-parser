@@ -94,14 +94,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  codecov
+  codecov (~> 0.1)
   flutter_analyze!
   guard-rspec (~> 4.7)
   rake (~> 10.0)
   rb-readline (~> 0.5)
   rspec (~> 3.0)
   rubocop (~> 0.6)
-  simplecov
+  simplecov (~> 0.16)
 
 BUNDLED WITH
    2.0.1
