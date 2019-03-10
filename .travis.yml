@@ -1,7 +1,13 @@
----
 sudo: false
 language: ruby
+os:
+  - osx
+
 cache: bundler
 rvm:
   - 2.4.1
+
 before_install: gem install bundler -v 2.0.1
+install: gem install test-unit codecov
+
+script: bundle exec rake spec
