@@ -36,7 +36,9 @@ Gem takes an output and return array with violations (when there are no violatio
 
 **For above output it will be array with 5 elements**
 
-	FlutterAnalyze::Parser.violations(input)
+```ruby
+FlutterAnalyze::Parser.violations(input)
+```
 
 ==>
 
