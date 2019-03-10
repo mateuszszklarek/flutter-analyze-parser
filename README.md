@@ -1,20 +1,12 @@
-# FlutterAnalyzeParser
+# FlutterAnalyze
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/flutter_analyze_parser`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Parser for `flutter analyze` output.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-```ruby
-gem 'flutter_analyze_parser'
-```
-
-And then execute:
-
-    $ bundle
+	$ gem 'flutter_analyze'
 
 Or install it yourself as:
 
@@ -22,23 +14,44 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+When **there are no violations** in flutter project and you run `flutter analyze` your output in console will looks like below:
+
+	Analyzing my_flutter_project...
+	No issues found! (ran in 1.8s)
+
+When **there are some violations**:
+
+	Analyzing my_flutter_project...
+	
+	   info • Name types using UpperCamelCase • lib/main.dart:5:7 • camel_case_types
+	   info • Prefer const with constant constructors • lib/main.dart:13:13 • prefer_const_constructors
+	   info • Name types using UpperCamelCase • lib/main.dart:19:7 • camel_case_types
+	   info • Name types using UpperCamelCase • lib/main.dart:27:7 • camel_case_types
+	   info • Prefer const with constant constructors • lib/pages/home_page.dart:49:10 • prefer_const_constructors
+	   
+Gem takes an output and return array with violations (when there are no violations array will be empty).
+
+**For above output it will be array with 5 elements**
+
+```
+#<struct FlutterViolation rule="camel_case_types", description="Name types using UpperCamelCase", file="lib/main.dart", line=5>
+#<struct FlutterViolation rule="prefer_const_constructors", description="Prefer const with constant constructors", file="lib/main.dart", line=13>
+#<struct FlutterViolation rule="camel_case_types", description="Name types using UpperCamelCase", file="lib/main.dart", line=19>
+#<struct FlutterViolation rule="camel_case_types", description="Name types using UpperCamelCase", file="lib/main.dart", line=27>
+#<struct FlutterViolation rule="prefer_const_constructors", description="Prefer const with constant constructors", file="lib/pages/home_page.dart", line=49>
+```
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-Run Guard through Bundler with:
-
-	$ bundle exec guard
-	
-It will execute tests when you save file.
+1. Clone this repo
+2. Run `bundle install` to setup dependencies.
+3. Run `bundle exec rake spec` to run the tests.
+4. Use `bundle exec guard` to automatically have tests run as you make changes.
+5. Make your changes.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/flutter_analyze_parser.
+Bug reports and pull requests are welcome on GitHub at https://github.com/mateuszszklarek/flutter_analyze_parser.
 
 ## License
 
