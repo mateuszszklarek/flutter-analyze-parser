@@ -2,14 +2,14 @@ FlutterViolation = Struct.new(:rule, :description, :file, :line)
 
 class FlutterAnalyzeParser
   def self.violations(input)
-    _, *rest = input.split("\n")
+    filtered_input = filtered_input(input)
 
-    if rest.first.include? "No issues found!"
+    if filtered_input.first.include? "No issues found!"
       return []
     else
       violations = []
 
-      rest.drop(1).each do |line|
+      filtered_input.each do |line|
         _, description, file_with_line_number, rule = line.split(" • ")
         file, line, = file_with_line_number.split(":")
 
@@ -18,5 +18,12 @@ class FlutterAnalyzeParser
 
       return violations
     end
+  end
+
+  def self.filtered_input(input)
+    input.each_line
+      .reject { |line| line.strip.empty? }
+      .map(&:strip)
+      .drop(1)
   end
 end
