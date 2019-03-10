@@ -1,5 +1,6 @@
 # FlutterAnalyzeParser
 
+[![Gem](https://img.shields.io/gem/v/flutter_analyze_parser.svg)](https://rubygems.org/gems/flutter_analyze_parser)
 [![Build Status](https://travis-ci.org/mateuszszklarek/flutter-analyze-parser.svg?branch=master)](https://travis-ci.org/mateuszszklarek/flutter-analyze-parser)
 [![codecov](https://codecov.io/gh/mateuszszklarek/flutter-analyze-parser/branch/master/graph/badge.svg)](https://codecov.io/gh/mateuszszklarek/flutter-analyze-parser)
 
