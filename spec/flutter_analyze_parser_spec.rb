@@ -1,3 +1,10 @@
+if ENV['CI'] == 'true'
+  require 'simplecov'
+  SimpleCov.start
+  require 'codecov'
+  SimpleCov.formatter = SimpleCov::Formatter::Codecov
+end
+
 RSpec.describe FlutterAnalyze::Parser do
   let(:input_without_violations_path) { File.dirname(__FILE__) + "/fixtures/test_input_without_violations.txt" }
   let(:input_with_violations_path) { File.dirname(__FILE__) + "/fixtures/test_input_with_violations.txt" }
