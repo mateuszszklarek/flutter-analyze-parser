@@ -4,7 +4,7 @@ FlutterViolation = Struct.new(:rule, :description, :file, :line)
 
 module FlutterAnalyze
   class Parser
-    def self.parsed_violations(input)
+    def self.violations(input)
       _, *rest = input.split("\n")
 
       if rest.first.include? "No issues found!"

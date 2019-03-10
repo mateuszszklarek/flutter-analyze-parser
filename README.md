@@ -10,7 +10,7 @@ Add this line to your application's Gemfile:
 
 Or install it yourself as:
 
-    $ gem install flutter_analyze_parser
+    $ gem install flutter_analyze
 
 ## Usage
 
@@ -32,6 +32,10 @@ When **there are some violations**:
 Gem takes an output and return array with violations (when there are no violations array will be empty).
 
 **For above output it will be array with 5 elements**
+
+	FlutterAnalyze::Parser.violations(input)
+
+==>
 
 ```
 #<struct FlutterViolation rule="camel_case_types", description="Name types using UpperCamelCase", file="lib/main.dart", line=5>

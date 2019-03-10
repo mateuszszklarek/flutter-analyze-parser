@@ -1,4 +1,4 @@
-RSpec.describe FlutterAnalyze do
+RSpec.describe FlutterAnalyze::Parser do
   let(:input_without_violations_path) { File.dirname(__FILE__) + "/fixtures/test_input_without_violations.txt" }
   let(:input_with_violations_path) { File.dirname(__FILE__) + "/fixtures/test_input_with_violations.txt" }
 
@@ -15,7 +15,7 @@ RSpec.describe FlutterAnalyze do
 
     describe "violations" do
       it "should be empty" do
-        expect(FlutterAnalyze::Parser.parsed_violations(input)).to be_empty
+        expect(FlutterAnalyze::Parser.violations(input)).to be_empty
       end
     end
   end
@@ -28,7 +28,7 @@ RSpec.describe FlutterAnalyze do
     end
 
     describe "violations" do
-      let(:violations) { FlutterAnalyze::Parser.parsed_violations(input) }
+      let(:violations) { FlutterAnalyze::Parser.violations(input) }
 
       it "should not be empty" do
         expect(violations).not_to be_empty
