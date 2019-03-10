@@ -1,5 +1,7 @@
 # FlutterAnalyze
 
+[![Build Status](https://travis-ci.org/mateuszszklarek/flutter-analyze-parser.svg?branch=master)](https://travis-ci.org/mateuszszklarek/flutter-analyze-parser)
+
 Parser for `flutter analyze` output.
 
 ## Installation
