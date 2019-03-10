@@ -1,4 +1,4 @@
-lib = File.expand_path("../lib", __FILE__)
+lib = File.expand_path("lib", __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "flutter_analyze/version.rb"
 
@@ -15,9 +15,9 @@ Gem::Specification.new do |spec|
   spec.files         = ["lib/flutter_analyze_parser.rb"]
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rubocop", "~> 0.6"
-  spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "guard-rspec", "~> 4.7"
+  spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rb-readline", "~> 0.5"
+  spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "rubocop", "~> 0.6"
 end
