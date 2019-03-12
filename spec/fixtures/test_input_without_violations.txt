@@ -1,3 +1,4 @@
+Running "flutter packages get" in git...                            1.5s
 
 Analyzing my_flutter_project...
 
