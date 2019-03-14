@@ -1,30 +1,29 @@
 RSpec.describe FlutterAnalyzeParser do
-  let(:input_without_violations_path) { File.dirname(__FILE__) + "/fixtures/test_input_without_violations.txt" }
-  let(:input_with_violations_path) { File.dirname(__FILE__) + "/fixtures/test_input_with_violations.txt" }
+  let(:content) { File.readlines(filename).reduce(:+) }
 
   describe "when read input file without violations" do
-    let(:input) { content(input_without_violations_path) }
+    let(:filename) { File.dirname(__FILE__) + "/fixtures/test_input_without_violations.txt" }
 
     it "should reads a content" do
-      expect(input).not_to be nil
+      expect(content).not_to be nil
     end
 
     describe "violations" do
       it "should be empty" do
-        expect(FlutterAnalyzeParser.violations(input)).to be_empty
+        expect(FlutterAnalyzeParser.violations(content)).to be_empty
       end
     end
   end
 
   describe "when read input file with violations" do
-    let(:input) { content(input_with_violations_path) }
+    let(:filename) { File.dirname(__FILE__) + "/fixtures/test_input_with_violations.txt" }
 
     it "should reads a content" do
-      expect(input).not_to be nil
+      expect(content).not_to be nil
     end
 
     describe "violations" do
-      let(:violations) { FlutterAnalyzeParser.violations(input) }
+      let(:violations) { FlutterAnalyzeParser.violations(content) }
 
       it "should not be empty" do
         expect(violations).not_to be_empty
@@ -61,8 +60,4 @@ RSpec.describe FlutterAnalyzeParser do
       end
     end
   end
-end
-
-def content(filename)
-  File.readlines(filename).reduce(:+)
 end
