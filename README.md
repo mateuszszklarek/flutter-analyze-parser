@@ -66,9 +66,17 @@ puts FlutterAnalyzeParser.violations(input)
 4. Use `bundle exec guard` to automatically have tests run as you make changes.
 5. Make your changes.
 
-## Contributing
+## Development
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/mateuszszklarek/flutter_analyze_parser.
+
+## Author
+
+- [Mateusz Szklarek](https://github.com/mateuszszklarek)
+
+## Contributors
+
+- [Wojciech Korzeniowski](https://github.com/WojciechKo) - big 👏👏👏 Wojtek for your help!
 
 ## License
 
