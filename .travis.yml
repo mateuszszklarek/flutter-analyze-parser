@@ -4,7 +4,10 @@ os:
   - osx
 
 cache: bundler
+bundler_args: "--without documentation --path bundle"
+
 rvm:
+  - 2.4.1
   - 2.6.0
 
-script: bundle install && bundle exec rake spec
+script: bundle exec rake spec
