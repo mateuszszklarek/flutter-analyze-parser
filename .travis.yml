@@ -4,7 +4,7 @@ os:
   - osx
 
 cache: bundler
-bundler_args: "--without documentation"
+bundler_args: --without documentation
 
 rvm:
   - 2.6.2
