@@ -7,6 +7,6 @@ cache: bundler
 bundler_args: --without documentation
 
 rvm:
-  - 2.6.2
+  - 2.4.1
 
 script: bundle exec rake spec
