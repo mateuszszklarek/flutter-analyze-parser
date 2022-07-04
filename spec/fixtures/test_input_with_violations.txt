@@ -7,6 +7,8 @@ Analyzing my_flutter_project...
    info • Prefer const with constant constructors • lib/main.dart:13:13 • prefer_const_constructors
    info • Name types using UpperCamelCase • lib/main.dart:19:7 • camel_case_types
 
+warning • 'demo' isn't a recognized error code • analysis_options.yaml:5:5 • unrecognized_error_code
+  error • The argument type 'Null' can't be assigned to the parameter type 'String' • lib/main.dart:14:14 • argument_type_not_assignable
 
    info • Name types using UpperCamelCase • lib/main.dart:27:7 • camel_case_types
    info • Prefer const with constant constructors • lib/pages/home_page.dart:49:10 • prefer_const_constructors

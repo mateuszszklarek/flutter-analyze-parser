@@ -29,13 +29,14 @@ RSpec.describe FlutterAnalyzeParser do
         expect(violations).not_to be_empty
       end
 
-      it "should have 5 items" do
-        expect(violations.length).to eq(5)
+      it "should have 7 items" do
+        expect(violations.length).to eq(7)
       end
 
       describe "1st item" do
         it "should have correct fields" do
           expected = FlutterViolation.new(
+            "info",
             "camel_case_types",
             "Name types using UpperCamelCase",
             "lib/main.dart",
@@ -46,9 +47,38 @@ RSpec.describe FlutterAnalyzeParser do
         end
       end
 
+      describe "4st item" do
+        it "should have correct fields" do
+          expected = FlutterViolation.new(
+            "warning",
+            "unrecognized_error_code",
+            "'demo' isn't a recognized error code",
+            "analysis_options.yaml",
+            5
+          )
+
+          expect(violations.fetch(3)).to eq(expected)
+        end
+      end
+
+      describe "5st item" do
+        it "should have correct fields" do
+          expected = FlutterViolation.new(
+            "error",
+            "argument_type_not_assignable",
+            "The argument type 'Null' can't be assigned to the parameter type 'String'",
+            "lib/main.dart",
+            14
+          )
+
+          expect(violations.fetch(4)).to eq(expected)
+        end
+      end
+
       describe "last item" do
         it "should have correct fields" do
           expected = FlutterViolation.new(
+            "info",
             "prefer_const_constructors",
             "Prefer const with constant constructors",
             "lib/pages/home_page.dart",
